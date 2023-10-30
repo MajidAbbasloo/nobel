@@ -1,0 +1,281 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
+@import url("http://cdn.font-store.ir/yekan.css");
+
+:root {
+  -webkit-tap-highlight-color: transparent; /* transparent with keyword */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* transparent with rgba */
+  -webkit-tap-highlight-color: hsla(0, 0, 0, 0); /* transparent with hsla */
+  -webkit-tap-highlight-color: #00000000; /* transparent with hex with alpha */
+  -webkit-tap-highlight-color: #0000; /* transparent with short hex with alpha */
+}
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 5.9rem;
+
+  /*========== Colors ==========*/
+  --hue: 174;
+  --sat: 63%;
+  /* header color  */
+  --header-color: linear-gradient(
+    90deg,
+    rgba(252, 70, 107, 0.9) 20%,
+    rgba(48, 6, 124, 0.938) 90%,
+    rgba(48, 6, 124, 0.938) 90%
+  );
+
+  /* color of selected menu item */
+  --first-color: hsl(9, 100%, 52%);
+  /* i dont know  */
+  --first-color-alt: #ff7504;
+  /* color of bottom menu and section titles */
+  --title-color: hsl(0, 0%, 100%);
+  /* color of texts */
+  --text-color: #725c5c;
+  /* color of body */
+  --body-color: rgb(231, 231, 231);
+  /* coor of navbars */
+  --container-color: hsl(258, 88%, 17%);
+
+  /*========== Font and typography ==========*/
+  --body-font: "yekan", "Open Sans", sans-serif;
+  --h1-font-size: 1.5rem;
+  --normal-font-size: 1.3rem;
+  --tiny-font-size: 1.2rem;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+@media screen and (min-width: 968px) {
+  :root {
+    --h1-font-size: 2.25rem;
+    --normal-font-size: 2;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.section {
+  padding: 4.5rem 0 2rem;
+}
+
+.section__title {
+  font-size: var(--h1-font-size);
+  color: var(--title-color);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/*=============== LAYOUT ===============*/
+.container_bottom {
+  max-width: 968px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+/*=============== HEADER ===============*/
+.header_bottom {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-image: var(--header-color);
+  z-index: var(--z-fixed);
+  transition: 0.4s;
+  border-bottom-left-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+  overflow: hidden;
+}
+
+/*=============== NAV ===============*/
+.nav_bottom {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__img {
+  width: 32px;
+  border-radius: 50%;
+}
+
+.nav__logo {
+  color: var(--title-color);
+  font-weight: 600;
+}
+
+@media screen and (max-width: 767px) {
+  .nav__menu {
+    font-size: 5rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: var(--container-color);
+    box-shadow: 0 -1px 12px hsla(var(--hue), var(--sat), 15%, 0.15);
+    width: 100%;
+    height: 7rem;
+    padding: 0 1rem;
+    display: grid;
+    align-content: center;
+    border-radius: 1.25rem 1.25rem 0 0;
+    transition: 0.4s;
+  }
+}
+
+.nav__list,
+.nav__link {
+  display: flex;
+}
+
+.nav__link {
+  flex-direction: column;
+  align-items: center;
+  row-gap: 4px;
+  color: var(--title-color);
+  font-weight: 600;
+}
+
+.nav__list {
+  justify-content: space-around;
+}
+
+.nav__name {
+  font-size: var(--tiny-font-size);
+  /* display: none;*/ /* Minimalist design, hidden labels */
+}
+
+.nav__icon {
+  font-size: 2rem;
+}
+
+/*Active link*/
+.active-link {
+  position: relative;
+  color: var(--first-color);
+  transition: 0.3s;
+}
+
+/* Minimalist design, active link */
+/* .active-link::before{
+  content: '';
+  position: absolute;
+  bottom: -.5rem;
+  width: 4px;
+  height: 4px;
+  background-color: var(--first-color);
+  border-radius: 50%;
+} */
+
+/* Change background header */
+.scroll-header {
+  box-shadow: 0 1px 12px hsla(var(--hue), var(--sat), 15%, 0.15);
+}
+
+/*=============== MEDIA QUERIES ===============*/
+/* For small devices */
+/* Remove if you choose, the minimalist design */
+@media screen and (max-width: 320px) {
+  .nav__name {
+    display: none;
+  }
+}
+
+/* For medium devices */
+@media screen and (min-width: 576px) {
+  .nav__list {
+    justify-content: center;
+    column-gap: 3rem;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  body {
+    margin: 0;
+  }
+  .section {
+    padding: 7rem 0 2rem;
+  }
+  .nav_bottom {
+    height: calc(var(--header-height) + 1.5rem); /* 4.5rem */
+  }
+  .nav__img {
+    display: none;
+  }
+  .nav__icon {
+    display: none;
+  }
+  .nav__name {
+    font-size: var(--normal-font-size);
+    /* display: block; */ /* Minimalist design, visible labels */
+  }
+  .nav__link:hover {
+    color: var(--first-color);
+  }
+
+  /* First design, remove if you choose the minimalist design */
+  .active-link::before {
+    content: "";
+    position: absolute;
+    bottom: -0.75rem;
+    width: 4px;
+    height: 4px;
+    background-color: var(--first-color);
+    border-radius: 50%;
+  }
+
+  /* Minimalist design */
+  /* .active-link::before{
+      bottom: -.75rem;
+  } */
+}
+
+/* For large devices */
+@media screen and (min-width: 1024px) {
+  .container_bottom {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.header-nobel {
+  font-weight: 900;
+  font-size: 2rem;
+  color: white;
+}
+
+.btn .bx {
+  font-size: 3rem;
+}

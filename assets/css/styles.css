@@ -158,7 +158,7 @@ html {
 }
 
 body {
-  background-color: var(--white);
+  background-color: white;
   color: var(--purple-navy);
   font-size: 1.6rem;
 }
@@ -664,7 +664,7 @@ body {
 
 .footer {
   font-size: var(--fs-8);
-  padding-bottom: 3rem;
+  padding-bottom: 5rem;
 }
 
 .footer a {
@@ -672,6 +672,7 @@ body {
 }
 
 .footer-top {
+  min-height: 100vh;
   background-image: url("../images/footer-bg.png"), var(--gradient-1);
   background-repeat: no-repeat;
   background-size: auto, 200%;
@@ -859,6 +860,9 @@ body {
   .footer-brand,
   .footer-list:not(:last-child) {
     margin-block-end: 0;
+  }
+  .footer-list {
+    align-self: center;
   }
 
   .footer-top .container {
@@ -1156,7 +1160,7 @@ body {
   /* color of texts */
   --text-color: #725c5c;
   /* color of body */
-  --body-color: rgb(231, 231, 231);
+  --body-color: rgb(255, 255, 255);
   /* coor of navbars */
   --container-color: hsl(258, 88%, 17%);
 
@@ -1230,6 +1234,7 @@ img {
 
 /*=============== HEADER ===============*/
 .header_bottom {
+  font-size: 1.5rem;
   position: fixed;
   top: 0;
   left: 0;

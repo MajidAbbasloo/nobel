@@ -228,10 +228,6 @@ body {
   }
 }
 
-.section {
-  padding-block: var(--section-padding);
-}
-
 .section-title {
   color: var(--st-patricks-blue);
   font-size: var(--fs-3);

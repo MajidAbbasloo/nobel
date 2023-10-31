@@ -232,6 +232,9 @@ body {
     transform: translate(2px, 2px) rotate(1deg);
   }
 }
+.section {
+  padding-block: var(--section-padding);
+}
 
 .section-title {
   color: var(--st-patricks-blue);
@@ -1214,9 +1217,9 @@ img {
 }
 
 /*=============== REUSABLE CSS CLASSES ===============*/
-.section {
+/* .section {
   padding: 6rem 0 0;
-}
+} */
 
 .section__title {
   font-size: var(--h1-font-size);
@@ -1353,9 +1356,9 @@ img {
   body {
     margin: 0;
   }
-  .section {
+  /* .section {
     padding: 7rem 0 2rem;
-  }
+  } */
   .nav_bottom {
     height: calc(var(--header-height) + 1.5rem); /* 4.5rem */
   }
@@ -1406,4 +1409,8 @@ img {
 
 .btn .bx {
   font-size: 3rem;
+}
+
+.content {
+  font-size: 1.5rem;
 }
